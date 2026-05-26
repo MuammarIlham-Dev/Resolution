@@ -5,7 +5,9 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  // Use absolute paths for static hosting (Cloudflare Pages, etc.). A relative
+  // base breaks asset and service worker URLs on non-root routes and refreshes.
+  base: '/',
   plugins: [
     react(),
     VitePWA({

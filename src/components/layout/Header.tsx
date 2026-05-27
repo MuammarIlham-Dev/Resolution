@@ -1,74 +1,84 @@
 import { Link } from 'react-router-dom';
-import { Menu, X, Moon, Sun, Search, User } from 'lucide-react';
+import { Menu, Moon, Sun, Search, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from '@/components/ui/sheet';
 import { useUIStore, useAuthStore } from '@/stores';
 import { useState } from 'react';
 
+const navLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/category/all', label: 'Categories' },
+  { to: '/courses', label: 'Courses' },
+  { to: '/seminars', label: 'Seminars' },
+  { to: '/about', label: 'About' },
+] as const;
+
+const navLinkClass =
+  'block py-3 text-base text-[#5D6D7E] hover:text-[#2C3E50] dark:text-[#B8B8B8] dark:hover:text-[#E8E8E8] border-b border-[#E8E4DC] dark:border-[#2D2D44] last:border-0';
+
 export const Header = () => {
-  const { theme, toggleTheme, mobileMenuOpen, toggleMobileMenu } = useUIStore();
+  const { theme, toggleTheme, mobileMenuOpen, setMobileMenuOpen } = useUIStore();
   const { isAuthenticated } = useAuthStore();
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearch, setShowSearch] = useState(false);
+
+  const closeSidebar = () => setMobileMenuOpen(false);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`;
+      closeSidebar();
     }
   };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#E8E4DC] bg-[#FDFBF7]/95 backdrop-blur supports-[backdrop-filter]:bg-[#FDFBF7]/60 dark:bg-[#1A1A2E]/95 dark:border-[#2D2D44]">
-      <div className="max-w-screen-2xl mx-auto px-4 md:px-6 xl:px-8 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center group shrink-0 py-2 transition-opacity hover:opacity-80">
+      <div className="max-w-screen-2xl mx-auto px-4 md:px-6 xl:px-8 h-16 flex items-center justify-between gap-3">
+        {/* Menu + compact logo area (sm/md) */}
+        <div className="flex items-center gap-2 lg:gap-0">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden shrink-0"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu className="h-5 w-5" />
+          </Button>
 
-          <div className="flex items-baseline flex-wrap gap-x-1.5 leading-none">
-            <span className="font-serif text-xl lg:text-[22px] font-bold text-[#C9A227]">
-              Peace-building and Conflict Resolution Institute
+          <Link
+            to="/"
+            className="flex items-center group shrink-0 py-2 transition-opacity hover:opacity-80 lg:ml-0"
+          >
+            <span className="hidden lg:inline font-serif text-xl lg:text-[22px] font-bold text-[#C9A227] leading-none">
+              Conflict Resolution Institute
             </span>
-          </div>
-          
-        </Link>
+            <span className="sr-only lg:hidden">Conflict Resolution Institute</span>
+          </Link>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link
-            to="/"
-            className="text-[#2C3E50] hover:text-[#2C3E50] dark:text-[#E8E8E8] dark:hover:text-[#FFFFFF] transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            to="/category/all"
-            className="text-[#2C3E50] hover:text-[#2C3E50] dark:text-[#E8E8E8] dark:hover:text-[#FFFFFF] transition-colors"
-          >
-            Categories
-          </Link>
-          <Link
-            to="/courses"
-            className="text-[#2C3E50] hover:text-[#2C3E50] dark:text-[#E8E8E8] dark:hover:text-[#FFFFFF] transition-colors"
-          >
-            Courses
-          </Link>
-          <Link
-            to="/seminars"
-            className="text-[#2C3E50] hover:text-[#2C3E50] dark:text-[#E8E8E8] dark:hover:text-[#FFFFFF] transition-colors"
-          >
-            Seminars
-          </Link>
-          <Link
-            to="/about"
-            className="text-[#2C3E50] hover:text-[#2C3E50] dark:text-[#E8E8E8] dark:hover:text-[#FFFFFF] transition-colors"
-          >
-            About
-          </Link>
+          {navLinks.map(({ to, label }) => (
+            <Link
+              key={to}
+              to={to}
+              className="text-[#2C3E50] hover:text-[#2C3E50] dark:text-[#E8E8E8] dark:hover:text-[#FFFFFF] transition-colors"
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
 
         {/* Actions */}
         <div className="flex items-center gap-2">
-          {/* Search */}
           {showSearch ? (
             <form onSubmit={handleSearch} className="hidden md:flex items-center gap-2">
               <Input
@@ -85,7 +95,7 @@ export const Header = () => {
                 size="icon"
                 onClick={() => setShowSearch(false)}
               >
-                <X className="h-4 w-4" />
+                <Search className="h-4 w-4" />
               </Button>
             </form>
           ) : (
@@ -99,7 +109,6 @@ export const Header = () => {
             </Button>
           )}
 
-          {/* Theme Toggle */}
           <Button variant="ghost" size="icon" onClick={toggleTheme}>
             {theme === 'light' ? (
               <Moon className="h-5 w-5" />
@@ -108,7 +117,6 @@ export const Header = () => {
             )}
           </Button>
 
-          {/* Author Link */}
           {isAuthenticated ? (
             <Link to="/author/dashboard">
               <Button variant="ghost" size="icon">
@@ -122,24 +130,23 @@ export const Header = () => {
               </Button>
             </Link>
           )}
-
-          {/* Mobile Menu Toggle */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={toggleMobileMenu}
-          >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-[#E8E4DC] dark:border-[#2D2D44] bg-[#FDFBF7] dark:bg-[#1A1A2E]">
-          <div className="max-w-screen-2xl mx-auto px-4 md:px-6 xl:px-8 py-4 flex flex-col gap-4">
-            <form onSubmit={handleSearch} className="flex items-center gap-2">
+      {/* Sidebar for sm and smaller (< md) */}
+      <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+        <SheetContent
+          side="left"
+          className="w-[min(100vw-3rem,20rem)] border-[#E8E4DC] bg-[#FDFBF7] dark:border-[#2D2D44] dark:bg-[#1A1A2E] p-0"
+        >
+          <SheetHeader className="border-b border-[#E8E4DC] px-6 py-5 text-left dark:border-[#2D2D44]">
+            <SheetTitle className="font-serif text-lg font-bold text-[#C9A227] text-left">
+              Conflict Resolution Institute
+            </SheetTitle>
+          </SheetHeader>
+
+          <div className="flex flex-col px-6 py-4">
+            <form onSubmit={handleSearch} className="mb-6 flex items-center gap-2">
               <Input
                 type="search"
                 placeholder="Search..."
@@ -147,57 +154,30 @@ export const Header = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="flex-1"
               />
-              <Button type="submit" size="icon">
+              <Button type="submit" size="icon" aria-label="Search">
                 <Search className="h-4 w-4" />
               </Button>
             </form>
-            <Link
-              to="/"
-              className="py-2 text-[#5D6D7E] hover:text-[#2C3E50] dark:text-[#B8B8B8] dark:hover:text-[#E8E8E8]"
-              onClick={toggleMobileMenu}
-            >
-              Home
-            </Link>
-            <Link
-              to="/category/all"
-              className="py-2 text-[#5D6D7E] hover:text-[#2C3E50] dark:text-[#B8B8B8] dark:hover:text-[#E8E8E8]"
-              onClick={toggleMobileMenu}
-            >
-              Categories
-            </Link>
-            <Link
-              to="/courses"
-              className="py-2 text-[#5D6D7E] hover:text-[#2C3E50] dark:text-[#B8B8B8] dark:hover:text-[#E8E8E8]"
-              onClick={toggleMobileMenu}
-            >
-              Courses
-            </Link>
-            <Link
-              to="/seminars"
-              className="py-2 text-[#5D6D7E] hover:text-[#2C3E50] dark:text-[#B8B8B8] dark:hover:text-[#E8E8E8]"
-              onClick={toggleMobileMenu}
-            >
-              Seminars
-            </Link>
-            <Link
-              to="/about"
-              className="py-2 text-[#5D6D7E] hover:text-[#2C3E50] dark:text-[#B8B8B8] dark:hover:text-[#E8E8E8]"
-              onClick={toggleMobileMenu}
-            >
-              About
-            </Link>
-            {!isAuthenticated && (
-              <Link
-                to="/author/login"
-                className="py-2 text-[#5D6D7E] hover:text-[#2C3E50] dark:text-[#B8B8B8] dark:hover:text-[#E8E8E8]"
-                onClick={toggleMobileMenu}
-              >
-                Author Login
-              </Link>
-            )}
+
+            <nav className="flex flex-col">
+              {navLinks.map(({ to, label }) => (
+                <Link key={to} to={to} className={navLinkClass} onClick={closeSidebar}>
+                  {label}
+                </Link>
+              ))}
+              {!isAuthenticated && (
+                <Link
+                  to="/author/login"
+                  className={navLinkClass}
+                  onClick={closeSidebar}
+                >
+                  Author Login
+                </Link>
+              )}
+            </nav>
           </div>
-        </div>
-      )}
+        </SheetContent>
+      </Sheet>
     </header>
   );
 };

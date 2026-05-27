@@ -4,7 +4,7 @@ setlocal
 cd /d "%~dp0"
 
 echo ===================================
-echo   Resolution - Blog Platform
+echo   Conflict Resolution Institute
 echo ===================================
 echo.
 

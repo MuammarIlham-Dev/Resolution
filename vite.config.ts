@@ -13,8 +13,8 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'Resolution - Literary Blog',
-        short_name: 'Resolution',
+        name: 'Conflict Resolution Institute',
+        short_name: 'Conflict Resolution Institute',
         description: 'A collection of thoughts, stories, and insights',
         theme_color: '#FDFBF7',
         background_color: '#2C3E50',

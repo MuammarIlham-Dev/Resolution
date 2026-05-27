@@ -1,27 +1,34 @@
 import { Link } from 'react-router-dom';
 import { Twitter, Facebook, Instagram, Github, Heart } from 'lucide-react';
 
+const authorDesignations = [
+  {
+    name: 'Director',
+    designation: 'Principal Author & Institute Lead',
+  },
+  {
+    name: 'Editorial Board',
+    designation: 'Senior Research Fellows',
+  },
+  {
+    name: 'Contributing Authors',
+    designation: 'Peace & Conflict Studies Writers',
+  },
+] as const;
+
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="border-t border-[#E8E4DC] bg-[#FDFBF7] dark:bg-[#1A1A2E] dark:border-[#2D2D44] relative overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-4 md:px-6 xl:px-8 pt-16 pb-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 xl:gap-16">
           {/* Brand & Mission */}
           <div className="flex flex-col gap-6">
             <Link to="/" className="flex items-center group w-fit pb-2 transition-opacity hover:opacity-80">
-              <div className="flex flex-col justify-center">
-                <div className="flex items-baseline flex-wrap gap-x-1.5 leading-none">
-                  <span className="font-serif text-xl sm:text-2xl font-bold text-[#C9A227]">
-                    Peace-building
-                  </span>
-                  <span className="font-serif text-sm sm:text-base text-[#2C3E50] dark:text-[#E8E8E8]">
-                    and Conflict Resolution
-                  </span>
-                </div>
-                <span className="text-[0.65rem] sm:text-[0.75rem] tracking-[0.25em] text-[#C9A227] font-medium uppercase mt-1.5">
-                  Institute
+              <div className="flex items-baseline flex-wrap gap-x-1.5 leading-none">
+                <span className="font-serif text-xl sm:text-2xl font-bold text-[#C9A227]">
+                  Conflict Resolution Institute
                 </span>
               </div>
             </Link>
@@ -48,8 +55,8 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Explore & Legal — 2 columns on sm/md, separate cols on lg+ */}
-          <div className="grid grid-cols-2 gap-8 lg:contents">
+          {/* Explore, Legal & Author Designation */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:col-span-3">
             {/* Explore Section */}
             <div>
               <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 relative w-fit">
@@ -102,6 +109,33 @@ export const Footer = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            {/* Author Designation */}
+            <div className="sm:col-span-2 lg:col-span-1">
+              <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 relative w-fit">
+                Author Designation
+                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
+              </h3>
+              <ul className="space-y-4">
+                {authorDesignations.map((entry) => (
+                  <li key={entry.designation}>
+                    <p className="text-sm font-medium text-[#2C3E50] dark:text-[#E8E8E8]">
+                      {entry.name}
+                    </p>
+                    <p className="text-xs text-[#5D6D7E] dark:text-[#B8B8B8] mt-0.5 leading-relaxed">
+                      {entry.designation}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/author/login"
+                className="inline-flex items-center gap-2 mt-5 text-sm text-[#C9A227] hover:text-[#b8941f] transition-colors group"
+              >
+                <span className="h-1 w-2 bg-[#C9A227] transition-all group-hover:w-4" />
+                Author Portal
+              </Link>
             </div>
           </div>
         </div>

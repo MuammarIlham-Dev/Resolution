@@ -10,7 +10,7 @@ export const AboutPage = () => {
             <BookOpen className="h-10 w-10 text-[#C9A227]" />
           </div>
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6">
-            About Resolution
+            About Conflict Resolution Institute
           </h1>
           <p className="text-xl text-[#5D6D7E] dark:text-[#B8B8B8] max-w-2xl mx-auto">
             A literary blog designed like a digital book, offering a serene reading experience
@@ -26,7 +26,7 @@ export const AboutPage = () => {
             </h2>
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <p className="text-[#5D6D7E] dark:text-[#B8B8B8]">
-                Resolution was born from a simple belief: in an age of fleeting content and
+                Conflict Resolution Institute was born from a simple belief: in an age of fleeting content and
                 endless scrolling, there remains a place for thoughtful, well-crafted writing.
                 We aim to create a digital sanctuary where stories can breathe, ideas can flourish,
                 and readers can immerse themselves in meaningful narratives.
@@ -97,11 +97,11 @@ export const AboutPage = () => {
               Reach out to us and let&apos;s create something beautiful together.
             </p>
             <a
-              href="mailto:hello@resolution.blog"
+              href="mailto:hello@conflictresolutioninstitute.com"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#C9A227] text-[#1A1A2E] font-medium rounded-lg hover:bg-[#b8941f] transition-colors"
             >
               <Mail className="h-4 w-4" />
-              hello@resolution.blog
+              hello@conflictresolutioninstitute.com
             </a>
           </div>
         </section>

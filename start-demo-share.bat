@@ -1,11 +1,11 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-title Resolution - Demo Share via Cloudflare Tunnel
+title Conflict Resolution Institute - Demo Share via Cloudflare Tunnel
 color 0A
 
 echo ============================================
-echo   Resolution - Quick Demo Share
+echo   Conflict Resolution Institute - Quick Demo Share
 echo ============================================
 echo.
 

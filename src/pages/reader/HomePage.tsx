@@ -38,7 +38,7 @@ export const HomePage = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C9A227]/10 dark:bg-[#C9A227]/20 rounded-full mb-6">
               {/*<Sparkles className="h-4 w-4 text-[#C9A227]" />*/}
               <span className="text-sm text-[#C9A227] font-medium">
-                Welcome to PBCRI
+                Welcome to Conflict Resolution Institute
               </span>
             </div>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 leading-tight">
@@ -49,7 +49,7 @@ export const HomePage = () => {
             </h1>
             <p className="text-lg md:text-xl xl:text-2xl text-[#5D6D7E] dark:text-[#B8B8B8] mb-8 max-w-2xl xl:max-w-4xl mx-auto leading-relaxed">
               Discover a world of ideas, narratives, and perspectives.
-              Resolution is your digital sanctuary for meaningful reading.
+              Conflict Resolution Institute is your digital sanctuary for meaningful reading.
             </p>
             <div className="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-4">
               <Link to="/category/all" className="w-full lg:w-auto">

@@ -1,20 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Twitter, Facebook, Instagram, Github, Heart } from 'lucide-react';
 
-const authorDesignations = [
-  {
-    name: 'Director',
-    designation: 'Principal Author & Institute Lead',
-  },
-  {
-    name: 'Editorial Board',
-    designation: 'Senior Research Fellows',
-  },
-  {
-    name: 'Contributing Authors',
-    designation: 'Peace & Conflict Studies Writers',
-  },
-] as const;
+const authorProfile = {
+  name: 'Mohammad Mahbub Alam',
+  designation: 'Director & Author',
+  expertise: 'Conflict Resolution, Peacebuilding, and Social Development',
+} as const;
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -70,7 +61,6 @@ export const Footer = () => {
                   { label: 'Courses', to: '/courses' },
                   { label: 'Seminars', to: '/seminars' },
                   { label: 'About the Project', to: '/about' },
-                  { label: 'Author Portal', to: '/author/login' },
                 ].map((link) => (
                   <li key={link.to}>
                     <Link
@@ -117,25 +107,32 @@ export const Footer = () => {
                 Author Designation
                 <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
               </h3>
-              <ul className="space-y-4">
-                {authorDesignations.map((entry) => (
-                  <li key={entry.designation}>
-                    <p className="text-sm font-medium text-[#2C3E50] dark:text-[#E8E8E8]">
-                      {entry.name}
-                    </p>
-                    <p className="text-xs text-[#5D6D7E] dark:text-[#B8B8B8] mt-0.5 leading-relaxed">
-                      {entry.designation}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/author/login"
-                className="inline-flex items-center gap-2 mt-5 text-sm text-[#C9A227] hover:text-[#b8941f] transition-colors group"
-              >
-                <span className="h-1 w-2 bg-[#C9A227] transition-all group-hover:w-4" />
-                Author Portal
-              </Link>
+              <div className="space-y-3">
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-[#5D6D7E] dark:text-[#B8B8B8]">
+                    Name
+                  </p>
+                  <p className="text-sm font-medium text-[#2C3E50] dark:text-[#E8E8E8] mt-1">
+                    {authorProfile.name}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-[#5D6D7E] dark:text-[#B8B8B8]">
+                    Designation
+                  </p>
+                  <p className="text-sm text-[#2C3E50] dark:text-[#E8E8E8] mt-1 leading-relaxed">
+                    {authorProfile.designation}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-[#5D6D7E] dark:text-[#B8B8B8]">
+                    Expertise
+                  </p>
+                  <p className="text-sm text-[#2C3E50] dark:text-[#E8E8E8] mt-1 leading-relaxed">
+                    {authorProfile.expertise}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

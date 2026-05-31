@@ -25,9 +25,9 @@ export const Footer = () => {
   return (
     <footer className="border-t border-[#E8E4DC] bg-[#FDFBF7] dark:bg-[#1A1A2E] dark:border-[#2D2D44] relative overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-4 md:px-6 xl:px-8 pt-16 pb-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 xl:gap-16">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.05fr)_auto_auto_minmax(0,1.85fr)] lg:gap-x-8 xl:gap-x-10 lg:items-start">
           {/* Brand & Mission */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 sm:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center group w-fit pb-2 transition-opacity hover:opacity-80">
               <div className="flex items-baseline flex-wrap gap-x-1.5 leading-none">
                 <span className="font-serif text-xl sm:text-2xl font-bold text-[#C9A227]">
@@ -58,69 +58,67 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Explore, Legal & About Author */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:col-span-3">
-            {/* Explore Section */}
-            <div>
-                <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 relative w-fit">
-                  Explore
-                  <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    { label: 'Home', to: '/' },
-                    { label: 'All Categories', to: '/category/all' },
-                    { label: 'Courses', to: '/courses' },
-                    { label: 'Seminars', to: '/seminars' },
-                    { label: 'About the Project', to: '/about' },
-                  ].map((link) => (
-                    <li key={link.to}>
-                      <Link
-                        to={link.to}
-                        className="text-[#2C3E50] hover:text-[#C9A227] dark:text-[#E8E8E8] transition-colors flex items-center gap-2 group text-sm"
-                      >
-                        <span className="h-1 w-0 bg-[#C9A227] transition-all group-hover:w-2" />
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {/* Explore */}
+          <div className="w-fit max-w-full">
+            <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-4 relative w-fit">
+              Explore
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
+            </h3>
+            <ul className="space-y-2.5">
+              {[
+                { label: 'Home', to: '/' },
+                { label: 'All Categories', to: '/category/all' },
+                { label: 'Courses', to: '/courses' },
+                { label: 'Seminars', to: '/seminars' },
+                { label: 'About the Project', to: '/about' },
+              ].map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="text-[#2C3E50] hover:text-[#C9A227] dark:text-[#E8E8E8] transition-colors flex items-center gap-2 group text-sm whitespace-nowrap"
+                  >
+                    <span className="h-1 w-0 bg-[#C9A227] transition-all group-hover:w-2" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-              {/* Legal Section */}
-              <div>
-                <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 relative w-fit">
-                  Legal
-                  <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    { label: 'Privacy Policy', to: '#' },
-                    { label: 'Terms of Service', to: '#' },
-                    { label: 'Cookie Policy', to: '#' },
-                    { label: 'Copyright Info', to: '#' },
-                  ].map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        to={link.to}
-                        className="text-[#2C3E50] hover:text-[#C9A227] dark:text-[#E8E8E8] transition-colors flex items-center gap-2 group text-sm"
-                      >
-                        <span className="h-1 w-0 bg-[#C9A227] transition-all group-hover:w-2" />
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {/* Legal */}
+          <div className="w-fit max-w-full">
+            <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-4 relative w-fit">
+              Legal
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
+            </h3>
+            <ul className="space-y-2.5">
+              {[
+                { label: 'Privacy Policy', to: '#' },
+                { label: 'Terms of Service', to: '#' },
+                { label: 'Cookie Policy', to: '#' },
+                { label: 'Copyright Info', to: '#' },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.to}
+                    className="text-[#2C3E50] hover:text-[#C9A227] dark:text-[#E8E8E8] transition-colors flex items-center gap-2 group text-sm whitespace-nowrap"
+                  >
+                    <span className="h-1 w-0 bg-[#C9A227] transition-all group-hover:w-2" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* About Author */}
-            <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 relative w-fit">
-                About Author
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
-              </h3>
+          {/* About Author */}
+          <div className="sm:col-span-2 lg:col-span-1 min-w-0">
+            <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-4 relative w-fit">
+              About Author
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
+            </h3>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
                 {/* Column 1 */}
                 <div className="space-y-3 text-sm leading-relaxed">
                   <p className="font-serif text-base font-bold text-[#2C3E50] dark:text-[#E8E8E8]">
@@ -158,7 +156,7 @@ export const Footer = () => {
                       <span className="font-medium">E-mail:</span>{' '}
                       <a
                         href={`mailto:${authorProfile.email}`}
-                        className="text-blue-600 underline hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                        className="text-blue-600 underline hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 break-all"
                       >
                         {authorProfile.email}
                       </a>
@@ -167,7 +165,6 @@ export const Footer = () => {
                 </div>
               </div>
             </div>
-          </div>
         </div>
 
         {/* Credits */}

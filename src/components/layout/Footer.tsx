@@ -5,7 +5,7 @@ const authorProfile = {
   name: 'Mohammad Mahbub Alam',
   role: 'Assistant Professor, Trainer & Guest Faculty of English',
   affiliations:
-    "Rajdhani Girls' College; SAIC Teachers' Training College; CARe Nursing College, Dhaka",
+    "SAIC Teachers' Training College; CARe Nursing College, Dhaka",
   academicHeading: 'Academic Achievements & Progress',
   academicAchievements: [
     'PGD in International Relations',
@@ -27,7 +27,7 @@ export const Footer = () => {
       <div className="max-w-screen-2xl mx-auto px-4 md:px-6 xl:px-8 pt-16 pb-8 relative z-10">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-8 xl:gap-10">
           {/* Brand */}
-          <div className="flex flex-col gap-6 lg:w-[26%] lg:shrink-0">
+          <div className="flex flex-col gap-6 lg:w-[30%] lg:shrink-0">
             <Link to="/" className="flex items-center group w-fit transition-opacity hover:opacity-80">
               <span className="font-serif text-xl sm:text-2xl font-bold text-[#C9A227] leading-tight">
                 Conflict Resolution Institute
@@ -56,6 +56,54 @@ export const Footer = () => {
             </div>
           </div>
 
+
+          {/* About Author */}
+          <div className="min-w-0 flex-1 lg:pt-1">
+            <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-4 relative w-fit">
+              About Author
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-8 max-w-3xl lg:max-w-none">
+              {/* Column 1: academic achievements & focus */}
+              <div className="space-y-3 text-sm leading-relaxed">
+                <p className="font-medium text-[#8B4513] dark:text-[#C9A227]">
+                  {authorProfile.academicHeading}
+                </p>
+                <ul className="space-y-1 text-[#2C3E50] dark:text-[#E8E8E8]">
+                  {authorProfile.academicAchievements.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <p className="text-[#8B4513] dark:text-[#C9A227] pt-1">{authorProfile.focus}</p>
+              </div>
+
+              {/* Column 2: role, affiliations & contact */}
+              <div className="space-y-3 text-sm leading-relaxed">
+                <p className="font-serif text-base font-bold text-[#2C3E50] dark:text-[#E8E8E8]">
+                  {authorProfile.name}
+                </p>
+                <p className="text-[#8B4513] dark:text-[#C9A227]">{authorProfile.role}</p>
+                <p className="text-[#2C3E50] dark:text-[#E8E8E8]">{authorProfile.affiliations}</p>
+                <div className="space-y-2 pt-2 text-[#2C3E50] dark:text-[#E8E8E8]">
+                  <p>
+                    <span className="font-medium">Cell Phone No:</span>{' '}
+                    <span className="text-[#8B4513] dark:text-[#C9A227]">{authorProfile.phone}</span>
+                  </p>
+                  <p>
+                    <span className="font-medium">E-mail:</span>{' '}
+                    <a
+                      href={`mailto:${authorProfile.email}`}
+                      className="text-blue-600 underline hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 break-all"
+                    >
+                      {authorProfile.email}
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Explore */}
           <div className="w-fit shrink-0 lg:pt-1">
             <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-4 relative w-fit">
@@ -81,51 +129,6 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* About Author */}
-          <div className="min-w-0 flex-1 lg:pt-1">
-            <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-4 relative w-fit">
-              About Author
-              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
-            </h3>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-8 max-w-3xl lg:max-w-none">
-              <div className="space-y-3 text-sm leading-relaxed">
-                <p className="font-serif text-base font-bold text-[#2C3E50] dark:text-[#E8E8E8]">
-                  {authorProfile.name}
-                </p>
-                <p className="text-[#8B4513] dark:text-[#C9A227]">{authorProfile.role}</p>
-                <p className="text-[#2C3E50] dark:text-[#E8E8E8]">{authorProfile.affiliations}</p>
-                <p className="pt-2 font-medium text-[#8B4513] dark:text-[#C9A227]">
-                  {authorProfile.academicHeading}
-                </p>
-                <ul className="space-y-1 text-[#2C3E50] dark:text-[#E8E8E8]">
-                  {authorProfile.academicAchievements.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="space-y-4 text-sm leading-relaxed">
-                <p className="text-[#8B4513] dark:text-[#C9A227]">{authorProfile.focus}</p>
-                <div className="space-y-2 text-[#2C3E50] dark:text-[#E8E8E8]">
-                  <p>
-                    <span className="font-medium">Cell Phone No:</span>{' '}
-                    <span className="text-[#8B4513] dark:text-[#C9A227]">{authorProfile.phone}</span>
-                  </p>
-                  <p>
-                    <span className="font-medium">E-mail:</span>{' '}
-                    <a
-                      href={`mailto:${authorProfile.email}`}
-                      className="text-blue-600 underline hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 break-all"
-                    >
-                      {authorProfile.email}
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 

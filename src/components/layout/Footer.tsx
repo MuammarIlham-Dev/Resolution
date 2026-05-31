@@ -86,7 +86,7 @@ export const Footer = () => {
           </div>
 
           {/* Legal */}
-          <div className="w-fit max-w-full">
+       {/* <div className="w-fit max-w-full">
             <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-4 relative w-fit">
               Legal
               <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
@@ -109,7 +109,7 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* About Author */}
           <div className="sm:col-span-2 lg:col-span-1 min-w-0">

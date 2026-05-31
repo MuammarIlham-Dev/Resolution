@@ -3,16 +3,20 @@ import { Twitter, Facebook, Instagram, Github, Heart } from 'lucide-react';
 
 const authorProfile = {
   name: 'Mohammad Mahbub Alam',
-  designation: [
-    'Assistant Professor, Trainer & Guest Faculty of English',
-    'Rajdhani Girls\' College; SAIC Teachers\' Training College; CARe Nursing College, Dhaka',
+  role: 'Assistant Professor, Trainer & Guest Faculty of English',
+  affiliations:
+    "Rajdhani Girls' College; SAIC Teachers' Training College; CARe Nursing College, Dhaka",
+  academicHeading: 'Academic Achievements & Progress',
+  academicAchievements: [
+    'PGD in International Relations',
+    'M.A. (English); NTRCA (English)',
+    'M.A. (Religious Science)',
+    'LL.M. in Human Rights (Enrollee)',
   ],
-  expertise: [
-    'Researcher in Human Resource Development',
-    'Experienced in Students\' Counseling Psychology',
-    'PGD in International Relations · M.A. (English) · NTRCA (English)',
-    'M.A. (Religious Science) · LL.M. in Human Rights (Enrollee)',
-  ],
+  focus:
+    "Researcher in Human Resource Development & Experienced in Students' Counseling Psychology",
+  phone: '01708371302 / 01615635243',
+  email: 'mahbubalam002021@gmail.com',
 } as const;
 
 export const Footer = () => {
@@ -54,107 +58,114 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Explore, Legal & Author Designation */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:col-span-3">
-            {/* Explore Section */}
-            <div>
-              <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 relative w-fit">
-                Explore
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  { label: 'Home', to: '/' },
-                  { label: 'All Categories', to: '/category/all' },
-                  { label: 'Courses', to: '/courses' },
-                  { label: 'Seminars', to: '/seminars' },
-                  { label: 'About the Project', to: '/about' },
-                ].map((link) => (
-                  <li key={link.to}>
-                    <Link
-                      to={link.to}
-                      className="text-[#2C3E50] hover:text-[#C9A227] dark:text-[#E8E8E8] transition-colors flex items-center gap-2 group text-sm"
-                    >
-                      <span className="h-1 w-0 bg-[#C9A227] transition-all group-hover:w-2" />
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          {/* Explore, Legal & About Author */}
+          <div className="flex flex-col gap-10 lg:col-span-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {/* Explore Section */}
+              <div>
+                <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 relative w-fit">
+                  Explore
+                  <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    { label: 'Home', to: '/' },
+                    { label: 'All Categories', to: '/category/all' },
+                    { label: 'Courses', to: '/courses' },
+                    { label: 'Seminars', to: '/seminars' },
+                    { label: 'About the Project', to: '/about' },
+                  ].map((link) => (
+                    <li key={link.to}>
+                      <Link
+                        to={link.to}
+                        className="text-[#2C3E50] hover:text-[#C9A227] dark:text-[#E8E8E8] transition-colors flex items-center gap-2 group text-sm"
+                      >
+                        <span className="h-1 w-0 bg-[#C9A227] transition-all group-hover:w-2" />
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Legal Section */}
+              <div>
+                <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 relative w-fit">
+                  Legal
+                  <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    { label: 'Privacy Policy', to: '#' },
+                    { label: 'Terms of Service', to: '#' },
+                    { label: 'Cookie Policy', to: '#' },
+                    { label: 'Copyright Info', to: '#' },
+                  ].map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        to={link.to}
+                        className="text-[#2C3E50] hover:text-[#C9A227] dark:text-[#E8E8E8] transition-colors flex items-center gap-2 group text-sm"
+                      >
+                        <span className="h-1 w-0 bg-[#C9A227] transition-all group-hover:w-2" />
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            {/* Legal Section */}
+            {/* About Author */}
             <div>
               <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 relative w-fit">
-                Legal
+                About Author
                 <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
               </h3>
-              <ul className="space-y-3">
-                {[
-                  { label: 'Privacy Policy', to: '#' },
-                  { label: 'Terms of Service', to: '#' },
-                  { label: 'Cookie Policy', to: '#' },
-                  { label: 'Copyright Info', to: '#' },
-                ].map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      to={link.to}
-                      className="text-[#2C3E50] hover:text-[#C9A227] dark:text-[#E8E8E8] transition-colors flex items-center gap-2 group text-sm"
-                    >
-                      <span className="h-1 w-0 bg-[#C9A227] transition-all group-hover:w-2" />
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
-            {/* Author Designation */}
-            <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 relative w-fit">
-                Author Designation
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
-              </h3>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-[#5D6D7E] dark:text-[#B8B8B8]">
-                    Name
-                  </p>
-                  <p className="text-sm font-medium text-[#2C3E50] dark:text-[#E8E8E8] mt-1">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                {/* Column 1 */}
+                <div className="space-y-3 text-sm leading-relaxed">
+                  <p className="font-serif text-base font-bold text-[#2C3E50] dark:text-[#E8E8E8]">
                     {authorProfile.name}
                   </p>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-[#5D6D7E] dark:text-[#B8B8B8]">
-                    Designation
+                  <p className="text-[#8B4513] dark:text-[#C9A227]">
+                    {authorProfile.role}
                   </p>
-                  <ul className="mt-2 space-y-1.5">
-                    {authorProfile.designation.map((line) => (
-                      <li
-                        key={line}
-                        className="text-sm text-[#2C3E50] dark:text-[#E8E8E8] leading-relaxed flex gap-2"
-                      >
-                        <span className="text-[#C9A227] shrink-0">·</span>
-                        <span>{line}</span>
-                      </li>
+                  <p className="text-[#2C3E50] dark:text-[#E8E8E8]">
+                    {authorProfile.affiliations}
+                  </p>
+                  <p className="pt-2 font-medium text-[#8B4513] dark:text-[#C9A227]">
+                    {authorProfile.academicHeading}
+                  </p>
+                  <ul className="space-y-1 text-[#2C3E50] dark:text-[#E8E8E8]">
+                    {authorProfile.academicAchievements.map((item) => (
+                      <li key={item}>{item}</li>
                     ))}
                   </ul>
                 </div>
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-[#5D6D7E] dark:text-[#B8B8B8]">
-                    Expertise
+
+                {/* Column 2 */}
+                <div className="space-y-4 text-sm leading-relaxed">
+                  <p className="text-[#8B4513] dark:text-[#C9A227]">
+                    {authorProfile.focus}
                   </p>
-                  <ul className="mt-2 space-y-1.5">
-                    {authorProfile.expertise.map((line) => (
-                      <li
-                        key={line}
-                        className="text-sm text-[#2C3E50] dark:text-[#E8E8E8] leading-relaxed flex gap-2"
+                  <div className="space-y-2 text-[#2C3E50] dark:text-[#E8E8E8]">
+                    <p>
+                      <span className="font-medium">Cell Phone No:</span>{' '}
+                      <span className="text-[#8B4513] dark:text-[#C9A227]">
+                        {authorProfile.phone}
+                      </span>
+                    </p>
+                    <p>
+                      <span className="font-medium">E-mail:</span>{' '}
+                      <a
+                        href={`mailto:${authorProfile.email}`}
+                        className="text-blue-600 underline hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
                       >
-                        <span className="text-[#C9A227] shrink-0">·</span>
-                        <span>{line}</span>
-                      </li>
-                    ))}
-                  </ul>
+                        {authorProfile.email}
+                      </a>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

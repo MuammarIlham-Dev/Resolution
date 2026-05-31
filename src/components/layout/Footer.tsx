@@ -175,7 +175,7 @@ export const Footer = () => {
         {/* Credits */}
         <div className="mt-16 pt-8 border-t border-[#E8E4DC] dark:border-[#2D2D44] flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-xs tracking-widest uppercase text-[#2C3E50] dark:text-[#E8E8E8]">
-            &copy; {currentYear} Peace-building and Conflict Resolution Institute  &middot; All Rights Reserved
+            &copy; {currentYear} Conflict Resolution Institute  &middot; All Rights Reserved
           </p>
           <div className="flex items-center gap-4 text-xs font-medium text-[#2C3E50] dark:text-[#E8E8E8]">
             <span className="flex items-center gap-1.5 px-3 py-1 bg-[#E8E4DC]/30 dark:bg-[#2D2D44]/50 rounded-full">

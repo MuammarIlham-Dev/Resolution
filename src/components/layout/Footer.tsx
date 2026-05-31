@@ -3,8 +3,16 @@ import { Twitter, Facebook, Instagram, Github, Heart } from 'lucide-react';
 
 const authorProfile = {
   name: 'Mohammad Mahbub Alam',
-  designation: 'Director & Author',
-  expertise: 'Conflict Resolution, Peacebuilding, and Social Development',
+  designation: [
+    'Assistant Professor, Trainer & Guest Faculty of English',
+    'Rajdhani Girls\' College; SAIC Teachers\' Training College; CARe Nursing College, Dhaka',
+  ],
+  expertise: [
+    'Researcher in Human Resource Development',
+    'Experienced in Students\' Counseling Psychology',
+    'PGD in International Relations · M.A. (English) · NTRCA (English)',
+    'M.A. (Religious Science) · LL.M. in Human Rights (Enrollee)',
+  ],
 } as const;
 
 export const Footer = () => {
@@ -120,17 +128,33 @@ export const Footer = () => {
                   <p className="text-xs uppercase tracking-wider text-[#5D6D7E] dark:text-[#B8B8B8]">
                     Designation
                   </p>
-                  <p className="text-sm text-[#2C3E50] dark:text-[#E8E8E8] mt-1 leading-relaxed">
-                    {authorProfile.designation}
-                  </p>
+                  <ul className="mt-2 space-y-1.5">
+                    {authorProfile.designation.map((line) => (
+                      <li
+                        key={line}
+                        className="text-sm text-[#2C3E50] dark:text-[#E8E8E8] leading-relaxed flex gap-2"
+                      >
+                        <span className="text-[#C9A227] shrink-0">·</span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-[#5D6D7E] dark:text-[#B8B8B8]">
                     Expertise
                   </p>
-                  <p className="text-sm text-[#2C3E50] dark:text-[#E8E8E8] mt-1 leading-relaxed">
-                    {authorProfile.expertise}
-                  </p>
+                  <ul className="mt-2 space-y-1.5">
+                    {authorProfile.expertise.map((line) => (
+                      <li
+                        key={line}
+                        className="text-sm text-[#2C3E50] dark:text-[#E8E8E8] leading-relaxed flex gap-2"
+                      >
+                        <span className="text-[#C9A227] shrink-0">·</span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>

@@ -59,10 +59,9 @@ export const Footer = () => {
           </div>
 
           {/* Explore, Legal & About Author */}
-          <div className="flex flex-col gap-10 lg:col-span-3">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {/* Explore Section */}
-              <div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:col-span-3">
+            {/* Explore Section */}
+            <div>
                 <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 relative w-fit">
                   Explore
                   <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
@@ -113,16 +112,15 @@ export const Footer = () => {
                   ))}
                 </ul>
               </div>
-            </div>
 
             {/* About Author */}
-            <div>
+            <div className="sm:col-span-2 lg:col-span-1">
               <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 relative w-fit">
                 About Author
                 <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
               </h3>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Column 1 */}
                 <div className="space-y-3 text-sm leading-relaxed">
                   <p className="font-serif text-base font-bold text-[#2C3E50] dark:text-[#E8E8E8]">

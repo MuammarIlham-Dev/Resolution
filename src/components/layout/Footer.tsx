@@ -25,18 +25,16 @@ export const Footer = () => {
   return (
     <footer className="border-t border-[#E8E4DC] bg-[#FDFBF7] dark:bg-[#1A1A2E] dark:border-[#2D2D44] relative overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-4 md:px-6 xl:px-8 pt-16 pb-8 relative z-10">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.05fr)_auto_auto_minmax(0,1.85fr)] lg:gap-x-8 xl:gap-x-10 lg:items-start">
-          {/* Brand & Mission */}
-          <div className="flex flex-col gap-6 sm:col-span-2 lg:col-span-1">
-            <Link to="/" className="flex items-center group w-fit pb-2 transition-opacity hover:opacity-80">
-              <div className="flex items-baseline flex-wrap gap-x-1.5 leading-none">
-                <span className="font-serif text-xl sm:text-2xl font-bold text-[#C9A227]">
-                  Conflict Resolution Institute
-                </span>
-              </div>
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-8 xl:gap-10">
+          {/* Brand */}
+          <div className="flex flex-col gap-6 lg:w-[26%] lg:shrink-0">
+            <Link to="/" className="flex items-center group w-fit transition-opacity hover:opacity-80">
+              <span className="font-serif text-xl sm:text-2xl font-bold text-[#C9A227] leading-tight">
+                Conflict Resolution Institute
+              </span>
             </Link>
             <p className="text-[#2C3E50] dark:text-[#E8E8E8] leading-relaxed italic">
-              "Articulating thoughts through a digital book experience. We believe in serene reading and the power of well-crafted stories."
+              &ldquo;Resolving Conflicts, Restoring Humanity&rdquo;
             </p>
             <div className="flex items-center gap-5">
               {[
@@ -59,7 +57,7 @@ export const Footer = () => {
           </div>
 
           {/* Explore */}
-          <div className="w-fit max-w-full">
+          <div className="w-fit shrink-0 lg:pt-1">
             <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-4 relative w-fit">
               Explore
               <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
@@ -85,92 +83,56 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal */}
-       {/* <div className="w-fit max-w-full">
-            <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-4 relative w-fit">
-              Legal
-              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
-            </h3>
-            <ul className="space-y-2.5">
-              {[
-                { label: 'Privacy Policy', to: '#' },
-                { label: 'Terms of Service', to: '#' },
-                { label: 'Cookie Policy', to: '#' },
-                { label: 'Copyright Info', to: '#' },
-              ].map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.to}
-                    className="text-[#2C3E50] hover:text-[#C9A227] dark:text-[#E8E8E8] transition-colors flex items-center gap-2 group text-sm whitespace-nowrap"
-                  >
-                    <span className="h-1 w-0 bg-[#C9A227] transition-all group-hover:w-2" />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-
           {/* About Author */}
-          <div className="sm:col-span-2 lg:col-span-1 min-w-0">
+          <div className="min-w-0 flex-1 lg:pt-1">
             <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-4 relative w-fit">
               About Author
               <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#C9A227]" />
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
-                {/* Column 1 */}
-                <div className="space-y-3 text-sm leading-relaxed">
-                  <p className="font-serif text-base font-bold text-[#2C3E50] dark:text-[#E8E8E8]">
-                    {authorProfile.name}
-                  </p>
-                  <p className="text-[#8B4513] dark:text-[#C9A227]">
-                    {authorProfile.role}
-                  </p>
-                  <p className="text-[#2C3E50] dark:text-[#E8E8E8]">
-                    {authorProfile.affiliations}
-                  </p>
-                  <p className="pt-2 font-medium text-[#8B4513] dark:text-[#C9A227]">
-                    {authorProfile.academicHeading}
-                  </p>
-                  <ul className="space-y-1 text-[#2C3E50] dark:text-[#E8E8E8]">
-                    {authorProfile.academicAchievements.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-8 max-w-3xl lg:max-w-none">
+              <div className="space-y-3 text-sm leading-relaxed">
+                <p className="font-serif text-base font-bold text-[#2C3E50] dark:text-[#E8E8E8]">
+                  {authorProfile.name}
+                </p>
+                <p className="text-[#8B4513] dark:text-[#C9A227]">{authorProfile.role}</p>
+                <p className="text-[#2C3E50] dark:text-[#E8E8E8]">{authorProfile.affiliations}</p>
+                <p className="pt-2 font-medium text-[#8B4513] dark:text-[#C9A227]">
+                  {authorProfile.academicHeading}
+                </p>
+                <ul className="space-y-1 text-[#2C3E50] dark:text-[#E8E8E8]">
+                  {authorProfile.academicAchievements.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
 
-                {/* Column 2 */}
-                <div className="space-y-4 text-sm leading-relaxed">
-                  <p className="text-[#8B4513] dark:text-[#C9A227]">
-                    {authorProfile.focus}
+              <div className="space-y-4 text-sm leading-relaxed">
+                <p className="text-[#8B4513] dark:text-[#C9A227]">{authorProfile.focus}</p>
+                <div className="space-y-2 text-[#2C3E50] dark:text-[#E8E8E8]">
+                  <p>
+                    <span className="font-medium">Cell Phone No:</span>{' '}
+                    <span className="text-[#8B4513] dark:text-[#C9A227]">{authorProfile.phone}</span>
                   </p>
-                  <div className="space-y-2 text-[#2C3E50] dark:text-[#E8E8E8]">
-                    <p>
-                      <span className="font-medium">Cell Phone No:</span>{' '}
-                      <span className="text-[#8B4513] dark:text-[#C9A227]">
-                        {authorProfile.phone}
-                      </span>
-                    </p>
-                    <p>
-                      <span className="font-medium">E-mail:</span>{' '}
-                      <a
-                        href={`mailto:${authorProfile.email}`}
-                        className="text-blue-600 underline hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 break-all"
-                      >
-                        {authorProfile.email}
-                      </a>
-                    </p>
-                  </div>
+                  <p>
+                    <span className="font-medium">E-mail:</span>{' '}
+                    <a
+                      href={`mailto:${authorProfile.email}`}
+                      className="text-blue-600 underline hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 break-all"
+                    >
+                      {authorProfile.email}
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
+          </div>
         </div>
 
         {/* Credits */}
         <div className="mt-16 pt-8 border-t border-[#E8E4DC] dark:border-[#2D2D44] flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-xs tracking-widest uppercase text-[#2C3E50] dark:text-[#E8E8E8]">
-            &copy; {currentYear} Conflict Resolution Institute  &middot; All Rights Reserved
+          <p className="text-xs tracking-widest uppercase text-[#2C3E50] dark:text-[#E8E8E8] text-center md:text-left">
+            &copy; {currentYear} Conflict Resolution Institute &middot; All Rights Reserved
           </p>
           <div className="flex items-center gap-4 text-xs font-medium text-[#2C3E50] dark:text-[#E8E8E8]">
             <span className="flex items-center gap-1.5 px-3 py-1 bg-[#E8E4DC]/30 dark:bg-[#2D2D44]/50 rounded-full">
@@ -180,7 +142,6 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Aesthetic flourish */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#C9A227] opacity-[0.03] blur-3xl -mr-32 -mt-32 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#C9A227] opacity-[0.02] blur-3xl -ml-32 -mb-32 pointer-events-none" />
     </footer>

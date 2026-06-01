@@ -11,7 +11,7 @@ const authorProfile = {
   academicHeading: 'Academic Achievements',
   academicAchievements: [
     'M.A. (English); NTRCA (English)',
-    'M.A. (Religious Science)',
+    'M.A. (Religious Studies)',
     'Post Graduate Diploma in International Relations',
     'LL.M. in Human Rights (Enrollee)',
   ],

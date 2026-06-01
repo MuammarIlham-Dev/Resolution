@@ -67,7 +67,14 @@ export const CoursesPage = () => {
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-6 leading-tight">
             Our <span className="text-[#C9A227]">Courses</span>
           </h1>
-          <p className="text-lg md:text-xl text-[#5D6D7E] dark:text-[#B8B8B8] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-[#2C3E50] dark:text-[#E8E8E8] max-w-3xl mx-auto mb-2 leading-relaxed">
+            <strong className="text-[#2C3E50] dark:text-[#E8E8E8]">One-month Course Schedule</strong>{' '}          
+          </p>
+          <p className="text-lg md:text-xl text-[#2C3E50] dark:text-[#E8E8E8] max-w-3xl mx-auto mb-2 leading-relaxed">
+            Classes are typically arranged on <strong className="text-[#2C3E50] dark:text-[#E8E8E8]">Fridays & Saturdays</strong>{' '}
+            (20 hours total).
+          </p>
+          <p className="text-lg md:text-xl text-[#2C3E50] dark:text-[#E8E8E8] max-w-3xl mx-auto leading-relaxed">
             Expand your knowledge with our curated collection of educational courses.
           </p>
         </div>

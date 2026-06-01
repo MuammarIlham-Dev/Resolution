@@ -5,7 +5,6 @@ import {
   Eye,
   GraduationCap,
   Users,
-  Calendar,
   Mail,
 } from 'lucide-react';
 
@@ -52,9 +51,6 @@ export const AboutPage = () => {
           <p className="font-serif text-xl md:text-2xl text-[#C9A227] italic max-w-3xl mx-auto">
             &ldquo;Resolving Conflicts, Restoring Humanity&rdquo;
           </p>
-          <p className="text-sm uppercase tracking-widest text-[#5D6D7E] dark:text-[#B8B8B8] mt-4">
-            Motto
-          </p>
         </div>
 
         <div className="space-y-10">
@@ -75,15 +71,6 @@ export const AboutPage = () => {
                 To be a globally recognized center of excellence in peace-building, mediation,
                 and conflict transformation, fostering a just, harmonious, and peaceful society.
               </p>
-              <div className="border-t border-[#E8E4DC] dark:border-[#2D2D44] pt-6 space-y-4">
-                <p>
-                  To become a leading institution in building a just, peaceful, and harmonious
-                  world.
-                </p>
-                <p className="font-medium text-[#2C3E50] dark:text-[#E8E8E8] text-lg leading-relaxed">
-                  একটি ন্যায়ভিত্তিক, শান্তিপূর্ণ ও সম্প্রীতিময় বিশ্ব গঠনে অগ্রণী প্রতিষ্ঠান হওয়া।
-                </p>
-              </div>
             </div>
           </SectionCard>
 
@@ -109,36 +96,11 @@ export const AboutPage = () => {
           </SectionCard>
 
           {/* Eligible Candidates */}
-          <SectionCard title="Eligible Candidates" icon={Users}>
+          <SectionCard title="Eligible Candidates/Participants" icon={Users}>
             <p className="text-[#5D6D7E] dark:text-[#B8B8B8] leading-relaxed text-lg">
-              To equip students, professionals, leaders, and civil communities with theoretical
-              and empirical knowledge of conflict-prevention-management and conflict transformation
-              skills.
+              To equip students, teachers, NGO workers, volunteers, leaders, professionals, administrators
+              and civil communities i.e. global citizens with theoretical and empirical knowledge of conflict-prevention-management and conflict transformation skills.
             </p>
-          </SectionCard>
-
-          {/* Seminar / Program Details */}
-          <SectionCard title="Seminar / Program Details" icon={Calendar}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl bg-[#FDFBF7] dark:bg-[#1A1A2E] border border-[#E8E4DC] dark:border-[#2D2D44] p-6">
-                <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-3">
-                  One-day Seminar
-                </h3>
-                <p className="text-sm text-[#5D6D7E] dark:text-[#B8B8B8] leading-relaxed">
-                  Class schedule is typically conducted on <strong className="text-[#2C3E50] dark:text-[#E8E8E8]">Friday</strong>{' '}
-                  (4 hours).
-                </p>
-              </div>
-              <div className="rounded-xl bg-[#FDFBF7] dark:bg-[#1A1A2E] border border-[#E8E4DC] dark:border-[#2D2D44] p-6">
-                <h3 className="font-serif text-lg font-bold text-[#2C3E50] dark:text-[#E8E8E8] mb-3">
-                  One-month Program
-                </h3>
-                <p className="text-sm text-[#5D6D7E] dark:text-[#B8B8B8] leading-relaxed">
-                  Classes are typically arranged on <strong className="text-[#2C3E50] dark:text-[#E8E8E8]">Fridays</strong>{' '}
-                  (12 hours total).
-                </p>
-              </div>
-            </div>
           </SectionCard>
         </div>
 
